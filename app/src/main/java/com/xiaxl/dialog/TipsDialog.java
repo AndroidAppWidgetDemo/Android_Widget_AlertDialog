@@ -106,7 +106,7 @@ public class TipsDialog {
             positiveBtn.setOnClickListener(this);
             negativeBtn.setOnClickListener(this);
 
-            mDialog = new AlertDialog.Builder(params.context).setView(view).create();
+            mDialog = new AlertDialog.Builder(params.context, R.style.xiaxl_AlertDialog).setView(view).create();
             mDialog.setCancelable(params.cancelAble);
             return mDialog;
         }
