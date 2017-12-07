@@ -7,6 +7,7 @@ import android.support.v4.widget.Space;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -114,6 +115,11 @@ public class TipsDialog {
         public AlertDialog show() {
             AlertDialog dialog = create();
             dialog.show();
+            //
+            //此处设置位置窗体大小
+            dialog.getWindow().setLayout(
+                    DipUtil.dip2px(dialog.getContext(), 320),
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
             return dialog;
         }
 
