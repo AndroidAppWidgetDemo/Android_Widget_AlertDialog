@@ -1,7 +1,9 @@
 package com.xiaxl.dialog;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.annotation.RestrictTo;
 import android.support.annotation.StringRes;
 import android.support.v4.widget.Space;
 import android.support.v7.app.AlertDialog;
@@ -9,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
 
 /**
@@ -107,7 +111,8 @@ public class TipsDialog {
             positiveBtn.setOnClickListener(this);
             negativeBtn.setOnClickListener(this);
 
-            mDialog = new AlertDialog.Builder(params.context, R.style.xiaxl_AlertDialog).setView(view).create();
+            mDialog = new AlertDialog.Builder(params.context, R.style.xiaxl_AlertDialog)
+                    .setView(view, 0, 0, 0, 0).create();
             mDialog.setCancelable(params.cancelAble);
             return mDialog;
         }
